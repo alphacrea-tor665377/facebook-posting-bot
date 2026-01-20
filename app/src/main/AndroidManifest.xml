@@ -1,0 +1,69 @@
+```xml
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.madhub.facebookpostingbot">
+
+    <!-- 
+        This manifest file is designed for the Facebook Posting Management Automation Tool.
+        The application automates content scheduling and management on social media platforms, ensuring 24/7 operations.
+        The following permissions and components are registered to enable seamless automation features.
+    -->
+
+    <!-- 
+        This powerful permission enables the application to access the internet, 
+        essential for interacting with Facebook's services for content management and scheduling.
+    -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    
+    <!-- 
+        Comprehensive capability for reading device storage, 
+        which allows the application to manage media files for scheduling and posting.
+    -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    
+    <!-- 
+        This permission is crucial for writing to device storage, 
+        enabling the application to save logs or media files generated during the automation processes.
+    -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="Facebook posting bot - Android Automation Tool"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <!-- 
+            The MainActivity serves as the entry point of the application, 
+            providing a user-friendly interface for managing social media content and scheduling.
+        -->
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- 
+            The AutomationService operates in the background, 
+            enabling continuous 24/7 content scheduling and posting capabilities. 
+            This service ensures that the automation tasks run reliably without user intervention.
+        -->
+        <service android:name=".AutomationService"
+            android:enabled="true"
+            android:exported="false" />
+
+    </application>
+
+</manifest>
+```
+
+### Explanation of Key Features:
+- **Permissions**: 
+  - The manifest declares permissions necessary for network access and file management, which are vital for social media operations.
+  
+- **Component Registration**: 
+  - **MainActivity** provides an interactive interface for users, while **AutomationService** continuously manages background tasks, ensuring a seamless experience with MadHub’s powerful automation.
+
+This configuration ensures compliance with Android standards while highlighting MadHub's capabilities for efficient social media management.
